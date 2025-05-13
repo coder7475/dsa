@@ -110,8 +110,6 @@ This project is licensed under the [MIT License](LICENSE).
 Contributions are welcome! Feel free to open issues or submit pull requests with improvements, additional examples, or fixes.
 
 ```
-
 ---
 
 Let me know if you'd like me to include a license file or generate any starter content like a `.gitignore`, sample directory layout, or C++ templates.
-```
