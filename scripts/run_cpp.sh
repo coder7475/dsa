@@ -19,6 +19,7 @@ if [ $? -eq 0 ]; then
   echo "Compiled successfully. Running $output..."
   echo "-------------------------------"
   "$output"
+  echo "-------------------------------"
 else
   echo "Compilation failed."
 fi
