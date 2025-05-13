@@ -1,5 +1,5 @@
 #include <iostream>
-using namespace std
+using namespace std;
 
 int main()
 {
@@ -15,7 +15,7 @@ int main()
   cout << ' ';
   cout << j;
   cout << ' ';
-  cout << d;
+  cout << d << endl;
 
   return 0;
 }
