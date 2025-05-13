@@ -1,8 +1,3 @@
-iThanks! Based on your updates, here's the revised `README.md` tailored for your C++ learning journey using [LearnCpp.com](https://www.learncpp.com/), and with the script located in the `scripts/` folder:
-
----
-
-````markdown
 # Learn C++ with LearnCpp.com
 
 This repository is dedicated to learning C++ through the excellent tutorials at [LearnCpp.com](https://www.learncpp.com/). It includes notes, code examples, and a custom script to **compile and run C++ files easily** from anywhere in your terminal.
@@ -20,7 +15,8 @@ This repository is dedicated to learning C++ through the excellent tutorials at 
 
 A handy Bash script is included to help compile and run `.cpp` files in one command.
 
-### 📁 Script Location:
+### 📁 Script Location
+
 ```bash
 scripts/run_cpp
 ````
@@ -49,10 +45,10 @@ run_cpp main.cpp
 
 ## 📌 Script Features
 
-* Uses `g++` with `-std=c++17`
-* Compiles file to a `.out` executable
-* Runs the program automatically after successful compilation
-* Displays useful errors if the file is missing or fails to compile
+- Uses `g++` with `-std=c++17`
+- Compiles file to a `.out` executable
+- Runs the program automatically after successful compilation
+- Displays useful errors if the file is missing or fails to compile
 
 ---
 
@@ -75,8 +71,8 @@ Hello, world!
 
 ## 🧩 Requirements
 
-* Ubuntu or Debian-based Linux system
-* `g++` installed:
+- Ubuntu or Debian-based Linux system
+- `g++` installed:
 
   ```bash
   sudo apt update && sudo apt install g++
