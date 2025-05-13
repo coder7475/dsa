@@ -18,7 +18,7 @@ A handy Bash script is included to help compile and run `.cpp` files in one comm
 ### 📁 Script Location
 
 ```bash
-scripts/run_cpp
+scripts/run_cpp.sh
 ````
 
 ### 🔧 Installation
