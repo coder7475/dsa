@@ -12,7 +12,7 @@ dir=$(dirname "$1")
 output="$dir/$filename.out"
 
 # Compile
-g++ -std=c++17 "$1" -o "$output"
+g++ -std=c++17 -pedantic-errors -Wall -Wextra "$1" -o "$output"
 
 # Check if compilation succeeded
 if [ $? -eq 0 ]; then
