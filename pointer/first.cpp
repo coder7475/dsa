@@ -11,5 +11,10 @@ int main() {
   // deference p to get the value of a
   cout << a << " " << *p << endl;
 
+  // modify a via p
+  *p = 20;
+
+  cout << a << " " << *p << endl;
+
   return 0;
 }
