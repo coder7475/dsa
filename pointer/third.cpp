@@ -12,5 +12,9 @@ int main() {
 
   cout << *(a + 1) << " " << a[1] << endl;
 
+  int *p = &a[2];
+
+  cout << *p << " " << p;
+
   return 0;
 }
