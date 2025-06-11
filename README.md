@@ -19,7 +19,7 @@ A handy Bash script is included to help compile and run `.cpp` files in one comm
 
 ```bash
 scripts/run_cpp.sh
-````
+```
 
 ### 🔧 Installation
 
@@ -86,7 +86,7 @@ Hello, world!
 .
 ├── basics/            # Code examples organized by topic
 ├── notes/             # Markdown notes per section
-├── scripts/           
+├── scripts/
 │   └── run_cpp        # Global compile & run script
 └── README.md
 ```
@@ -96,6 +96,10 @@ Hello, world!
 ## 🙋‍♂️ Why This Repo?
 
 Learning C++ can be overwhelming — this setup streamlines your environment so you can focus on **coding and understanding** rather than managing build tools.
+
+### topic
+
+Parameter Passing technique: https://www.geeksforgeeks.org/parameter-passing-techniques-in-cpp/#2-pass-by-reference
 
 ---
 
@@ -112,4 +116,4 @@ Contributions are welcome! Feel free to open issues or submit pull requests with
 ```
 ---
 
-Let me know if you'd like me to include a license file or generate any starter content like a `.gitignore`, sample directory layout, or C++ templates.
+```
