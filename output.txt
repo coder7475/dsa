@@ -1,0 +1,4 @@
+Compiled successfully. Running arrays/1_insertion.out...
+-------------------------------
+1 2 3 3 4 5 
+-------------------------------
