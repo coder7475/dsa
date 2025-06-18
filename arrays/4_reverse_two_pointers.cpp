@@ -12,7 +12,7 @@ int main() {
     cin >> a[i];
 
   // operation
-  for (int p1 = 0, p2 = n - 1; p1 != p2; p1++, p2--) {
+  for (int p1 = 0, p2 = n - 1; p1 < p2; p1++, p2--) {
     int tmp = a[p1];
     a[p1] = a[p2];
     a[p2] = tmp;
