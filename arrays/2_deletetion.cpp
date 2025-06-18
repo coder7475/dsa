@@ -6,7 +6,7 @@ int main() {
 
   cin >> n;
 
-  int *arr = new int[n + 1];
+  int *arr = new int[n];
 
   for (int i = 0; i < n; i++)
     cin >> arr[i];
@@ -23,7 +23,7 @@ int main() {
 
   arr[i] = 0;
 
-  for (int i = 0; i < n + 1; i++) {
+  for (int i = 0; i < n - 1; i++) {
     cout << arr[i] << " ";
   }
 
