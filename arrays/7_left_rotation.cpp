@@ -1,6 +1,9 @@
 #include <iostream>
 using namespace std;
-
+/**
+ * Time: O(n)
+ * Space: O(1)
+ **/
 int main() {
   int n;
   cin >> n;

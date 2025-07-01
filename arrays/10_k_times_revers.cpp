@@ -1,9 +1,20 @@
+#include <algorithm>
 #include <iostream>
+#include <utility>
 using namespace std;
 /**
  * Time: O(n)
- * Space: O(n)
+ * Space: O(1)
  */
+
+void reverse(int p1, int p2, int a[]) {
+  while (p1 < p2) {
+    swap(a[p1], a[p2]);
+    p1++;
+    p2--;
+  }
+}
+
 int main() {
   int n;
   cin >> n;
@@ -14,19 +25,16 @@ int main() {
 
   int k;
   cin >> k;
-  k = k % n;
 
   // logic
-  int *ans = new int[n];
-
-  for (int i = 0; i < n; i++) {
-    int idx = (i - k + n) % 5;
-    ans[idx] = a[i];
-  }
+  k = k % n;
+  reverse(0, k - 1, a);
+  reverse(k, n - 1, a);
+  reverse(0, n - 1, a);
 
   // output
   for (int i = 0; i < n; i++)
-    cout << ans[i] << " ";
+    cout << a[i] << " ";
 
   cout << "\n";
 
