@@ -11,6 +11,7 @@ int main() {
 
   int k;
   cin >> k;
+  k = k % n;
 
   // logic
   int *ans = new int[n];
