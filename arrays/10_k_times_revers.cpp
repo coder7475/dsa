@@ -2,11 +2,11 @@
 #include <iostream>
 #include <utility>
 using namespace std;
+
 /**
  * Time: O(n)
  * Space: O(1)
  */
-
 void reverse(int p1, int p2, int a[]) {
   while (p1 < p2) {
     swap(a[p1], a[p2]);
@@ -14,6 +14,11 @@ void reverse(int p1, int p2, int a[]) {
     p2--;
   }
 }
+
+/**
+ * Time: O(3n) -> O(n)
+ * Space: O(1)
+ */
 
 int main() {
   int n;
