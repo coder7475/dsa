@@ -1,5 +1,7 @@
+#include <cstddef>
 #include <iostream>
 // #include <iterator>
+#include <iterator>
 #include <string>
 #include <vector>
 using namespace std;
@@ -12,54 +14,75 @@ using namespace std;
 class Solution {
 public:
   string encode(vector<string> &strs) {
-    if (strs.empty())
-      return "";
-
-    vector<int> sizes;
+    // if (strs.empty())
+    //   return "";
+    //
+    // vector<int> sizes;
     string res;
 
-    for (string &s : strs) {
-      sizes.push_back(s.size());
+    for (const string &s : strs) {
+      res += to_string(s.size()) + "#" + s;
     }
 
-    for (int sz : sizes) {
-      res += to_string(sz) + ',';
-    }
+    // for (string &s : strs) {
+    //   sizes.push_back(s.size());
+    // }
 
-    res += "#";
+    // for (int sz : sizes) {
+    //   res += to_string(sz) + ',';
+    // }
 
-    for (string &s : strs) {
-      res += s;
-    }
-
+    // res += "#";
+    //
+    // for (string &s : strs) {
+    //   res += s;
+    // }
+    //
     return res;
   }
 
   vector<string> decode(string s) {
-    if (s.empty())
-      return {};
-
-    vector<int> sizes;
     vector<string> res;
-    int i;
-    for (i = 0; s[i] != '#'; i++) {
-      string cur = "";
-      while (s[i] != ',') {
-        cur += s[i];
-        i++;
+    size_t i = 0;
+
+    while (i < s.size()) {
+      int j = i;
+      while (s[j] != '#') {
+        j++;
       }
-      sizes.push_back(stoi(cur));
-    }
-
-    // skip #
-    i++;
-
-    for (int sz : sizes) {
-      res.push_back(s.substr(i, sz));
-      i += sz;
+      int length = stoi(s.substr(i, j - i));
+      i = j + 1;
+      j = i + length;
+      res.push_back(s.substr(i, length));
+      i = j;
     }
 
     return res;
+    //   if (s.empty())
+    //     return {};
+    //
+    //   vector<int> sizes;
+    //   vector<string> res;
+    //   int i;
+    //   for (i = 0; s[i] != '#'; i++) {
+    //     string cur = "";
+    //     while (s[i] != ',') {
+    //       cur += s[i];
+    //       i++;
+    //     }
+    //     sizes.push_back(stoi(cur));
+    //   }
+    //
+    //   // skip #
+    //   i++;
+    //
+    //   for (int sz : sizes) {
+    //     res.push_back(s.substr(i, sz));
+    //     i += sz;
+    //   }
+    //
+    //   return res;
+    // }
   }
 };
 
