@@ -1,13 +1,66 @@
 #include <iostream>
-#include <iterator>
+// #include <iterator>
+#include <string>
 #include <vector>
 using namespace std;
-
+/**
+ * Time: O(m) for each encode() & decode function call
+ * Space: O(m + n) for each encode & decode function call
+ * > Where m = sum of length of all strings
+ *  >>>>>  n = number of strings
+ */
 class Solution {
 public:
-  string encode(vector<string> &strs) {}
+  string encode(vector<string> &strs) {
+    if (strs.empty())
+      return "";
 
-  vector<string> decode(string s) {}
+    vector<int> sizes;
+    string res;
+
+    for (string &s : strs) {
+      sizes.push_back(s.size());
+    }
+
+    for (int sz : sizes) {
+      res += to_string(sz) + ',';
+    }
+
+    res += "#";
+
+    for (string &s : strs) {
+      res += s;
+    }
+
+    return res;
+  }
+
+  vector<string> decode(string s) {
+    if (s.empty())
+      return {};
+
+    vector<int> sizes;
+    vector<string> res;
+    int i;
+    for (i = 0; s[i] != '#'; i++) {
+      string cur = "";
+      while (s[i] != ',') {
+        cur += s[i];
+        i++;
+      }
+      sizes.push_back(stoi(cur));
+    }
+
+    // skip #
+    i++;
+
+    for (int sz : sizes) {
+      res.push_back(s.substr(i, sz));
+      i += sz;
+    }
+
+    return res;
+  }
 };
 
 int main() {
