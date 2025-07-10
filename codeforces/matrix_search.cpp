@@ -22,13 +22,16 @@ int main() {
 
   // Operation
 
-  // output
   for (int i = 0; i < n; ++i) {
     for (int j = 0; j < m; ++j) {
-      cout << matrix[i][j] << " ";
+      if (matrix[i][j] == x) {
+        cout << "will not take number" << "\n";
+        return 0;
+      }
     }
-    cout << endl;
   }
+
+  cout << "will take number" << "\n";
 
   return 0;
 }
