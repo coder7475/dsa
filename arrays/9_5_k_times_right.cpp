@@ -20,7 +20,7 @@ int main() {
   int *ans = new int[n];
 
   for (int i = 0; i < n; i++) {
-    int idx = (i - k + n) % n;
+    int idx = (i + k) % n;
     ans[idx] = a[i];
   }
 
