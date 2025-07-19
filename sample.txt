@@ -1,0 +1,14 @@
+Hello! This is a sample text file.
+This file contains multiple lines of text
+that can be used to practice file handling operations.
+
+Here are some numbers: 42, 17, 99
+And some more text in another paragraph.
+
+Feel free to:
+- Read this file
+- Write to it
+- Append content
+- Parse the numbers
+- Count the lines
+- Search for specific words
