@@ -1,5 +1,6 @@
 #include <fstream>
 #include <iostream>
+#include <sstream>
 #include <string>
 using namespace std;
 
@@ -12,17 +13,25 @@ int main() {
     return 1;
   }
 
-  int countLines = 0, countChars = 0;
+  int countLines = 0, countChars = 0, countWords = 0;
 
   while (getline(file, line)) {
     countLines++;
     countChars += line.size() + 1;
+    // count words using sstream
+    istringstream ss(line);
+    string word;
+
+    while (ss >> word) {
+      countWords++;
+    }
   }
 
-  cout << "Lines: " << countLines << endl;
-  cout << "Charaters: " << countChars << endl;
-
   file.close();
+
+  cout << "Lines: " << countLines << endl;
+  cout << "Words: " << countWords << endl;
+  cout << "Charaters: " << countChars << endl;
 
   return 0;
 }
