@@ -16,8 +16,9 @@ int main() {
     cout << pair.first << " => " << pair.second << "\n";
   }
 
-  cout << m[100] << endl; // output: orange
-  cout << m[23] << endl;  // output: " "
+  m[100] = "Law";
+  cout << "100 => " << m[100] << endl; // output: orange
+  cout << m[23] << endl;               // output: " "
 
   return 0;
 }
