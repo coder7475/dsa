@@ -13,8 +13,11 @@ int main() {
 
   // Access and print
   for (const auto &pair : m) {
-    std::cout << pair.first << " => " << pair.second << "\n";
+    cout << pair.first << " => " << pair.second << "\n";
   }
+
+  cout << m[100] << endl; // output: orange
+  cout << m[23] << endl;  // output: " "
 
   return 0;
 }
