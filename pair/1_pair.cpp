@@ -10,5 +10,13 @@ int main() {
   cout << "Second: " << pr.second << "\n";
   cout << p2.first << " " << p2.second << "\n";
 
+  pair<int, int> a = {3, 3};
+  pair<int, int> b = {3, 2};
+
+  if (a < b)
+    cout << "a is less than b\n";
+  else
+    cout << "b is less than a\n";
+
   return 0;
 }
