@@ -1,5 +1,9 @@
-2 2
-1 2
-3 4
-3
+7
+Hussien 9000
+Hafez 4000
+Omar 7000
+Atef 10000
+Karemo 6000
+Ezzat 5000
+Muhammad 10000
 
