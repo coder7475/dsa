@@ -1,9 +1,3 @@
 7
-Hussien 9000
-Hafez 4000
-Omar 7000
-Atef 10000
-Karemo 6000
-Ezzat 5000
-Muhammad 10000
+64 34 25 12 22 11 90
 
