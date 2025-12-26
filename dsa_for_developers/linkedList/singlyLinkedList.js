@@ -3,28 +3,104 @@ class Node {
     this.data = data;
     this.next = null;
   }
+
+  getValue() {
+    return this.data;
+  }
 }
 
-const node1 = new Node(10);
-const node2 = new Node(20);
-const node3 = new Node(30);
-const node4 = new Node(40);
-const node5 = new Node(50);
+class SinglyLinkedList {
+  // properties
+  head;
+  size = 0;
 
-node1.next = node2;
-node2.next = node3;
-node3.next = node4;
-node4.next = node5;
+  // methods
+  append(data) {
+    const newNode = new Node(data);
+    this.size++;
 
-console.log("Singly Linked List: ");
-console.log(JSON.stringify(node1));
+    if (!this.head) {
+      this.head = newNode;
+      return;
+    }
 
-// transverse the linked list
-console.log("Transversing the linked list\n");
-const head = node1;
-let cur = head;
+    let current = this.head;
 
-while (cur) {
-  console.log(JSON.stringify(cur, null, 2));
-  cur = cur.next;
+    while (current.next) {
+      current = current.next;
+    }
+
+    current.next = newNode;
+  }
+
+  // Time: O(1), Space: O(1)
+  prepend(data) {
+    const newNode = new Node(data);
+    this.size++;
+
+    if (!this.head) {
+      this.head = newNode;
+      return;
+    }
+
+    newNode.next = this.head;
+    this.head = newNode;
+  }
+
+  toString() {
+    let current = this.head;
+
+    let result = "";
+
+    while (current) {
+      const arrow = current.next ? "->" : "";
+      result += `${current.data} ${arrow} `;
+      current = current.next;
+    }
+
+    return result;
+  }
+
+  insert(data, index) {
+    if (index < 0 || index > this.size) {
+      throw new Error("Invalid Index");
+    }
+
+    if (index === 0) {
+      this.prepend(data);
+      return;
+    }
+
+    if (index === this.size) {
+      this.append(data);
+      return;
+    }
+
+    const newNode = new Node(data);
+
+    let current = this.head;
+    let prev = null;
+    let count = 0;
+
+    while (count < index) {
+      prev = current;
+      current = current.next;
+      count++;
+    }
+
+    newNode.next = current;
+    prev.next = newNode;
+  }
 }
+
+const list = new SinglyLinkedList();
+
+list.prepend(10);
+list.prepend(20);
+list.prepend(30);
+
+list.append(40);
+
+list.insert(50, 2);
+
+console.log(list.toString());
