@@ -160,3 +160,209 @@ For large n:
 - So n³ + n² + log n is **O(n³)**
 
 This is like adding pennies to millions - the pennies become **negligible**.
+
+Here is a clean and structured Markdown file based on your text. No em dashes are used, and references are provided at the end.
+
+---
+
+# Space Complexity and Data Structures
+
+## Space Complexity Overview
+
+Space complexity measures the total memory used by an algorithm during execution. It includes:
+
+1. Input storage
+2. Temporary variables
+3. Function call stack
+4. Data structures used
+
+---
+
+### Input Storage
+
+This is the memory required to store input values.
+
+* If the input is an array of `n` elements, then input space is `O(n)`
+* Some analyses exclude input space, but generally it is counted
+
+**Example**
+An input array of size `n` contributes `O(n)` space.
+
+---
+
+### Temporary Variables
+
+Variables used during algorithm execution, such as counters or accumulators.
+
+* Usually constant memory
+* Most contribute `O(1)` unless storing large data
+
+---
+
+### Function Call Stack
+
+Memory used for active function calls, especially in recursion.
+
+* A recursive function calling itself `n` times uses `O(n)` space
+* Contains return address, parameters, and local variables
+
+---
+
+### Additional Data Structures
+
+If an algorithm creates extra structures, they affect space complexity.
+
+| Structure Used            | Added Space |
+| ------------------------- | ----------- |
+| Array of size `n`         | `O(n)`      |
+| Hash map storing `k` keys | `O(k)`      |
+| Tree with `n` nodes       | `O(n)`      |
+
+---
+
+## Types of Data Structures
+
+Data structures organize and manage data for efficient access.
+
+There are two major categories:
+
+| Type       | Explanation                             |
+| ---------- | --------------------------------------- |
+| Linear     | Sequential arrangement of elements      |
+| Non Linear | Hierarchical or interconnected elements |
+
+---
+
+## Linear Data Structures
+
+### Common Examples
+
+| Structure   | Description                       |
+| ----------- | --------------------------------- |
+| Array       | Contiguous memory, indexed access |
+| Linked List | Nodes connected with pointers     |
+| Stack       | LIFO order                        |
+| Queue       | FIFO order                        |
+
+---
+
+## Non Linear Data Structures
+
+| Structure | Description                        |
+| --------- | ---------------------------------- |
+| Tree      | Parent-child relationships         |
+| Graph     | Nodes connected via edges          |
+| Heap      | Tree with ordering rules           |
+| Trie      | Tree designed for string retrieval |
+
+---
+
+# Array
+
+An array stores elements in a contiguous memory block. Indexing allows constant time access.
+
+### Core Characteristics
+
+* Contiguous memory storage
+* Constant time access `O(1)`
+* Fixed or dynamic size depending on language
+
+### Time Complexity Table
+
+| Operation       | Description         | Time           |
+| --------------- | ------------------- | -------------- |
+| Access          | `arr[i]`            | O(1)           |
+| Update          | Replace element     | O(1)           |
+| Insert at end   | Add to back         | O(1) amortized |
+| Insert at start | Shift elements      | O(n)           |
+| Delete at end   | Remove last element | O(1)           |
+| Search          | Find by value       | O(n)           |
+
+---
+
+### Custom Dynamic Array (JavaScript)
+
+```js
+const DEFAULT_CAPACITY = 53;
+
+class CustomArray {
+  constructor(capacity = DEFAULT_CAPACITY) {
+    this.capacity = capacity;
+    this.array = new Array(capacity);
+    this.length = 0;
+  }
+  push(value) {
+    if (this.length === this.capacity) {
+      this.capacity *= 2;
+      const newArray = new Array(this.capacity);
+      for (let i = 0; i < this.length; i++) {
+        newArray[i] = this.array[i];
+      }
+      this.array = newArray;
+    }
+    this.array[this.length++] = value;
+  }
+}
+```
+
+---
+
+# Linked List
+
+A Linked List stores data in nodes that are connected through references instead of contiguous memory.
+
+### Node Structure
+
+```js
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+  }
+}
+```
+
+### Characteristics
+
+* No random access
+* Flexible size
+* Efficient for insertion and deletion
+
+### Time Complexity
+
+| Operation       | Time                        |
+| --------------- | --------------------------- |
+| Traversal       | O(n)                        |
+| Insert at head  | O(1)                        |
+| Insert at tail  | O(n) without tail reference |
+| Delete by value | O(n)                        |
+| Access by index | O(n)                        |
+
+---
+
+# Real World Example: Image Viewer Navigation
+
+```ts
+export class ImageNode {
+  constructor(public data: string) {
+    this.next = null;
+    this.prev = null;
+  }
+}
+```
+
+Used for:
+
+* Photo galleries
+* Media playlists
+* Carousel components
+
+---
+
+# References
+
+1. Cormen, Leiserson, Rivest, Stein. Introduction to Algorithms. MIT Press.
+2. Robert Lafore. Data Structures and Algorithms in Java.
+3. Sedgewick, Wayne. Algorithms Fourth Edition. Addison-Wesley.
+4. MIT OpenCourseWare. Introduction to Algorithms: MIT 6.006.
+
