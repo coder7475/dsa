@@ -9,10 +9,13 @@ class LinkedListQueue() {
   constructor() {
     this.front = null;
     this.rear = null;
+    this.size = 0;
   }
 
   enqueue(data) {
     const newNode = new Node(data);
+    
+    this.size++;
 
     if (!this.front) {
       this.front = this.rear = newNode;
@@ -20,7 +23,7 @@ class LinkedListQueue() {
     }
 
     this.rear.next = newNode;
-    this.rear = newNode;
+    this.rear = neAwNode;
   }
   
   dequeue() {
@@ -33,11 +36,17 @@ class LinkedListQueue() {
 
     if (!this.front) this.rear = null;
 
+    this.size--;
+
     return vallue;
   }
 
   peek() {
     return this.front ? this.front.value : null;
+  }
+
+  getSize() {
+    return this.size;
   }
 
 }
