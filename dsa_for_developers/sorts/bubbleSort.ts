@@ -23,3 +23,5 @@ console.log("Original:", [...arr]);
 console.log("Ascending: ", bubbleSort([...arr], "asc"));
 console.log("Descending:", bubbleSort([...arr], "desc"));
 
+
+
