@@ -1,6 +1,6 @@
 // Time Complexity:  O(n²) average/worst
 // Space Complexity: O(1)
-function insertionSort(arr: number[], order: "asc" | "desc" = "asc"): number[] {
+function selectionSort(arr: number[], order: "asc" | "desc" = "asc"): number[] {
   const n = arr.length;
   if (n <= 1) return arr;
 
@@ -19,8 +19,8 @@ function insertionSort(arr: number[], order: "asc" | "desc" = "asc"): number[] {
 
 const arr = [29, 10, 14, 37, 12];
 console.log("Original:", [...arr]);
-console.log("Ascending: ", insertionSort([...arr], "asc"));
-console.log("Descending:", insertionSort([...arr], "desc"));
+console.log("Ascending: ", selectionSort([...arr], "asc"));
+console.log("Descending:", selectionSort([...arr], "desc"));
 
 
 
