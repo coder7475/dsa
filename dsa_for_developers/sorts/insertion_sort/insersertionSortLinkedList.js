@@ -96,28 +96,28 @@ class SinglyLinkedList {
   sort() {
     if (!this.head || !this.head.next) return;
 
+    let sorted = null;
     let current = this.head;
+
     while (current) {
-      let minNode = current;
-      let nextNode = current.next;
+      const next = current.next;
 
-      while (nextNode) {
-        if (nextNode.getValue() < minNode.getValue()) {
-          minNode = nextNode;
+      if (!sorted || current.data < sorted.data) {
+        current.next = sorted;
+        sorted = current;
+      } else {
+        let search = sorted;
+        while (search.next && search.next.data < current.data) {
+          search = search.next;
         }
-        nextNode = nextNode.next;
+        current.next = search.next;
+        search.next = current;
       }
 
-      if (current !== minNode) {
-        const temp = current.data;
-        current.data = minNode.data;
-        minNode.data = temp;
-      }
-
-      current = current.next;
-
+      current = next;
     }
 
+    this.head = sorted;
   }
 }
 
