@@ -95,29 +95,28 @@ class SinglyLinkedList {
   // Time: O(n²), Space: O(1)
   sort() {
     if (!this.head || !this.head.next) return;
-
-    let sorted = null;
+    const dummy = new Node(0);
+    dummy.next = this.head;
     let current = this.head;
 
-    while (current) {
-      const next = current.next;
-
-      if (!sorted || current.data < sorted.data) {
-        current.next = sorted;
-        sorted = current;
-      } else {
-        let search = sorted;
-        while (search.next && search.next.data < current.data) {
-          search = search.next;
-        }
-        current.next = search.next;
-        search.next = current;
+    while (current && current.next) {
+      if (current.getValue() <= current.next.getValue()) {
+        current = current.next;
+        continue;
       }
-
-      current = next;
     }
 
-    this.head = sorted;
+    const toInsert = current.next;
+    current.next = toInsert.next;
+
+    let prev = dummy;
+
+    while (prev.next.getValue() <= toInsert.getValue()) {
+      prev = prev.next;
+    }
+
+    toInsert.next = prev.next;
+    prev.next = toInsert;
   }
 }
 
